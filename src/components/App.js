@@ -5,6 +5,7 @@ import Navigation from './Navigation'
 import Footer from './Footer'
 import MainContent from './MainContent'
 import AddRecipe from './AddRecipe'
+import RemoveRecipe from './RemoveRecipe'
 import {
   BrowserRouter as Router,
   Route,
@@ -20,6 +21,7 @@ class App extends Component {
           <Navigation />
           <Route path="/" component={MainContent} />
           <Route path="/add-recipe" component={AddRecipe} />
+          <Route path="/remove-recipe" component={RemoveRecipe} />
           <Footer />
         </div>
       </Router>

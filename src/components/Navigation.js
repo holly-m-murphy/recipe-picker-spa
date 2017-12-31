@@ -28,6 +28,7 @@ class Navigation extends Component {
                         <li><a href=""><i className="material-icons">highlight_off</i></a></li>
                         <li><a href=""><i className="material-icons">restaurant_menu</i></a></li>
                     </ul>
+
                     {/*<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="#" className="blue-text text-lighten-5">Add a Recipe</a></li>

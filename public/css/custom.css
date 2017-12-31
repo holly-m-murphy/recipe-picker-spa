@@ -6,11 +6,18 @@
     margin-bottom: 50px;
 }
 .additional-top-margin{
-    margin-top: 50px
+    margin-top: 0px
 }
 .left-margin{
     margin-left:35px
 }
 .right-margin{
     margin-right:15px
+}
+.materialize-textarea.remove-bottom-padding-and-margin{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.additional-top-margin-icon{
+    margin-top: 20px;
 }
