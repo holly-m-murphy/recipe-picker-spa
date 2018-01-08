@@ -21,3 +21,48 @@
 .additional-top-margin-icon{
     margin-top: 20px;
 }
+  /* label color */
+   .input-field label {
+     color:black;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: black;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #01579b;
+     box-shadow: 0 1px 0 0 #01579b;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #01579b;
+     box-shadow: 0 1px 0 0 #01579b;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #01579b;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #01579b;
+   }
+
+   /* label focus color */
+    .input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+     color: black !important;
+    }
+
+/* label underline focus color */
+    .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+     border-bottom: 1px solid #01579b !important;
+     box-shadow: 0 1px 0 0 #01579b !important;
+    }
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+border: 2px solid #01579b;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+background-color: #01579b;

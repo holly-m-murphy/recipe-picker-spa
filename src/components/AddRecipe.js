@@ -25,7 +25,6 @@ class AddRecipe extends Component {
     }
 
     addStepToList = (e) => {
-        console.log(`addingStep`)
         let arr = [...this.state.preparationList]
         arr.push(this.state.step)
         this.setState({
@@ -131,8 +130,13 @@ class AddRecipe extends Component {
             <div>
                 {/*<div className="row"><MainContent /></div>*/}
                 <div className="row container">
-                    <div className="input-field col s4">
-                        <Input name="author" type="text" label="Recipe Author" placeholder="Author" onChange={this.handleChange}></Input>
+                    <div className="input-field col s6">
+                        <textarea name="title" className="materialize-textarea remove-bottom-padding-and-margin" type="text" label="Recipe Title" placeholder="Title" onChange={this.handleChange}></textarea>
+                    </div>
+
+
+                    <div className="input-field col s2 offset-s2">
+                        <Input name="author" type="text" label="Recipe Author" placeholder="Author" onChange={this.handleChange} end ></Input>
                     </div>
                 </div>
                 <div className="row container ">

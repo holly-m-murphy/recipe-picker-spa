@@ -19,7 +19,7 @@ class App extends Component {
       <Router>
         <div className="">
           <Navigation />
-          <Route path="/" component={MainContent} />
+          <MainContent />
           <Route path="/add-recipe" component={AddRecipe} />
           <Route path="/remove-recipe" component={RemoveRecipe} />
           <Footer />
