@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Input } from 'react-materialize'
-import MainContent from './MainContent'
+import saveRecipe from './../api'
 
 
 class AddRecipe extends Component {
@@ -13,7 +12,8 @@ class AddRecipe extends Component {
         measurement: "cup",
         ingredient: "",
         step: "",
-        author: ""
+        author: "",
+        displayResponse: null
     }
 
     addIngredient = (e) => {
@@ -39,6 +39,7 @@ class AddRecipe extends Component {
     }
 
     preparationList = () => {
+        console.log(`todo: make this its own component for prep and ingreds`)
         let preparationDisp = []
         this.state.preparationList.map((step, ind) => {
             preparationDisp.push(<p key={ind} >{step}</p>)
@@ -47,6 +48,7 @@ class AddRecipe extends Component {
     }
 
     ingredientList = () => {
+        console.log(`todo: make this its own component for prep and ingreds`)
         let ingredientDisp = []
         this.state.ingredientList.map((ingredient, ind) => {
             ingredientDisp.push(<p key={ind}>{ingredient.amount} {ingredient.measurement} {ingredient.ingredient}</p>)
@@ -56,6 +58,7 @@ class AddRecipe extends Component {
     }
 
     preparationCard = () => {
+        console.log(`todo: make this its own component for prep and ingreds`)
         return (<div className="card col s5 offset-s1 ">
             <div className="card-content">
                 {this.preparationList()}
@@ -63,6 +66,7 @@ class AddRecipe extends Component {
         </div>)
     }
     ingredientCard = () => {
+        console.log(`todo: make this its own component for prep and ingreds`)
         return (<div className="card col s5 ">
             <div className="card-content">
                 {this.ingredientList()}
@@ -125,11 +129,30 @@ class AddRecipe extends Component {
         </div>)
     }
 
+    handleSaveRecipe = async () => {
+        const response = await saveRecipe(this.state)
+        // this.setState({ displayResponse: true })
+        this.setState({
+            ingredientList: [],
+            preparationList: [],
+            amount: "",
+            measurement: "cup",
+            ingredient: "",
+            step: "",
+            author: "",
+            displayResponse: true
+        })
+        //console.log(`response from saving: `, response)
+    }
+
     render() {
         return (
             <div>
                 {/*<div className="row"><MainContent /></div>*/}
                 <div className="row container">
+                    <div className="row">
+                        {this.state.displayResponse ? <div className="response-message">Successfully added recipe!</div> : null}
+                    </div>
                     <div className="input-field col s6">
                         <textarea name="title" className="materialize-textarea remove-bottom-padding-and-margin" type="text" label="Recipe Title" placeholder="Title" onChange={this.handleChange}></textarea>
                     </div>
@@ -141,6 +164,7 @@ class AddRecipe extends Component {
                 </div>
                 <div className="row container ">
 
+
                     {this.enterAnIngredient()}
                     {this.addStep()}
                 </div>
@@ -150,7 +174,7 @@ class AddRecipe extends Component {
                 </div>
                 <div className="row container">
 
-                    <a className="waves-effect waves-light btn light-blue darken-4">Save Recipe</a>
+                    <a className="waves-effect waves-light btn light-blue darken-4" onClick={this.handleSaveRecipe} >Save Recipe</a>
                 </div>
             </div>
         )

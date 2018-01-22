@@ -21,6 +21,13 @@
 .additional-top-margin-icon{
     margin-top: 20px;
 }
+.response-message{
+    background-color: #01579b;
+    border-radius: 25px;
+    color: white;
+    font-style: bold;
+    text-align: center;
+}
   /* label color */
    .input-field label {
      color:black;
@@ -66,3 +73,5 @@ border: 2px solid #01579b;
 
 [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
 background-color: #01579b;
+
+

@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Input } from 'react-materialize'
-import MainContent from './MainContent'
 
 
 class RemoveRecipe extends Component {

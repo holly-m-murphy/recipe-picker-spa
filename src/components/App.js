@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navigation from './Navigation'
 import Footer from './Footer'
@@ -8,8 +7,7 @@ import AddRecipe from './AddRecipe'
 import RemoveRecipe from './RemoveRecipe'
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
 
 
