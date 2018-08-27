@@ -4,14 +4,14 @@ import { shallow } from 'enzyme';
 import RecipeDisplay from './RecipeDisplay';
 
 describe("RecipeDisplay component", async () => {
-    it("should display the title and author of the recipe", async () => {
+    it.skip("should display the title and author of the recipe", async () => {
         const props = {
-            title: "Recipe Title",
-            author: "Author"
+            recipes: [{title: "Recipe Title One", author:"Test Author One"}]
         }
         const wrapper = shallow(<RecipeDisplay { ...props } />)
+        console.log(wrapper.debug())
 
-        expect(wrapper.instance().state.searchText).toEqual("testing")
+        expect(wrapper.find(".card-title")).toEqual("Recipe Title One")
     })
 
 })

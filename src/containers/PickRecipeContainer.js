@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
-import RecipeDisplay from './../components/RecipeDisplay';
+import PickRecipe from './../components/PickRecipe';
 import { loadRecipes } from './../actions/actions';
 
 const mapStateToProps = (state) => {
+    console.log(`what is state in  pick recipe container: `, state)
     return {
         recipes: state.recipes
     }
@@ -16,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeDisplay)
+export default connect(mapStateToProps, mapDispatchToProps)(PickRecipe)

@@ -7,14 +7,14 @@ class RecipeDisplay extends Component {
     render() {
 
         return (
-            <div class="row">
-                <div class="col s12 m12">
-                    <div class="card light-blue darken-4">
-                        <div class="card-content white-text">
-                            <span class="card-title">{this.props.recipe.title}</span>
+            <div className="row">
+                <div className="col s12 m12">
+                    <div className="card light-blue darken-4">
+                        <div className="card-content white-text">
+                            <span className="card-title">{this.props.recipe.title}</span>
                             <p>{this.props.recipe.author}</p>
                         </div>
-                        <div class="card-action">
+                        <div className="card-action">
                             <a href="#">Expand recipe...</a>
                         </div>
                     </div>
