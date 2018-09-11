@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Input } from 'react-materialize'
-import saveRecipe from './../api'
+import { saveRecipe } from './../api'
 
 
 class AddRecipe extends Component {
@@ -130,7 +130,7 @@ class AddRecipe extends Component {
     }
 
     handleSaveRecipe = async () => {
-        const response = await saveRecipe(this.state)
+        const response = saveRecipe(this.state)
         // this.setState({ displayResponse: true })
         this.setState({
             ingredientList: [],
@@ -142,7 +142,6 @@ class AddRecipe extends Component {
             author: "",
             displayResponse: true
         })
-        //console.log(`response from saving: `, response)
     }
 
     render() {
