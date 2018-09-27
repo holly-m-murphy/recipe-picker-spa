@@ -13,7 +13,9 @@ class AddRecipe extends Component {
         ingredient: "",
         step: "",
         author: "",
-        displayResponse: null
+        displayResponse: null,
+        ingredients: "",
+        preparations: ""
     }
 
     addIngredient = (e) => {
@@ -33,6 +35,9 @@ class AddRecipe extends Component {
     }
 
     handleChange = (e) => {
+        console.log(`in change name: `, e.target.name)
+
+        console.log(`in change value: `, e.target.value)
         var change = {}
         change[e.target.name] = e.target.value
         this.setState(change)
@@ -61,7 +66,8 @@ class AddRecipe extends Component {
         console.log(`todo: make this its own component for prep and ingreds`)
         return (<div className="card col s5 offset-s1 ">
             <div className="card-content">
-                {this.preparationList()}
+                {/*{this.preparationList()}*/}
+                <textarea name="preparations" id="textarea2" class="materialize-textarea" data-length="25000" onClick={this.handleChange}></textarea>
             </div>
         </div>)
     }
@@ -69,7 +75,8 @@ class AddRecipe extends Component {
         console.log(`todo: make this its own component for prep and ingreds`)
         return (<div className="card col s5 ">
             <div className="card-content">
-                {this.ingredientList()}
+                {/*{this.ingredientList()}*/}
+                <textarea name="ingredients" id="textarea2" class="materialize-textarea" data-length="25000" onClick={this.handleChange}></textarea>
             </div>
         </div>)
     }
@@ -78,9 +85,9 @@ class AddRecipe extends Component {
         return (<div>
             <form className=" col s6">
                 <div className="row">
-                    <h5 className="col s12 additional-top-margin">Enter preparation step:</h5>
+                    <h5 className="col s12 additional-top-margin">Enter preparation steps:</h5>
                 </div>
-                <div className="row">
+                {/*<div className="row">
                     <div className="input-field col s11 ">
                         <textarea type="text" name="step" id="step" className="materialize-textarea remove-bottom-padding-and-margin" placeholder="Step 1" onChange={this.handleChange} />
 
@@ -88,7 +95,7 @@ class AddRecipe extends Component {
                     <div className="input-field col s1">
                         <a className="btn-floating light-blue darken-4" onClick={this.addStepToList}><i className="material-icons" >add</i></a>
                     </div>
-                </div>
+                </div>*/}
             </form>
         </div>)
     }
@@ -97,9 +104,9 @@ class AddRecipe extends Component {
         return (<div>
             <form className=" col s6">
                 <div className="row">
-                    <h5 className="col s12 additional-top-margin">Enter an ingredient:</h5>
+                    <h5 className="col s12 additional-top-margin" onChange={this.handleChange}>Enter ingredients:</h5>
                 </div>
-                <div className="row">
+                {/*<div className="row">
                     <div className="input-field col s2 ">
                         <Input name="amount" type="text" label="Amount" placeholder="1" onChange={this.handleChange}></Input>
                     </div>
@@ -120,16 +127,17 @@ class AddRecipe extends Component {
                         {/*<input placeholder="Enter amount" id="amount" type="text" className="validate">
                         </input>
                         <label for="amount">Amount</label>*/}
-                    </div>
+                {/*} </div>
                     <div className="input-field col s1">
                         <a className="btn-floating light-blue darken-4" onClick={this.addIngredient}><i className="material-icons">add</i></a>
                     </div>
-                </div>
+                </div>*/}
             </form>
         </div>)
     }
 
     handleSaveRecipe = async () => {
+        console.log(`state in handleSaveRecipe: `, this.state)
         const response = saveRecipe(this.state)
         // this.setState({ displayResponse: true })
         this.setState({
@@ -145,6 +153,7 @@ class AddRecipe extends Component {
     }
 
     render() {
+        console.log(`rendering state: `, this.state)
         return (
             <div>
                 {/*<div className="row"><MainContent /></div>*/}
