@@ -76,7 +76,7 @@ class AddRecipe extends Component {
         return (<div className="card col s5 ">
             <div className="card-content">
                 {/*{this.ingredientList()}*/}
-                <textarea name="ingredients" id="textarea2" class="materialize-textarea" data-length="25000" onClick={this.handleChange}></textarea>
+                <textarea name="ingredients" id="textarea2" className="materialize-textarea" data-length="25000" onClick={this.handleChange}></textarea>
             </div>
         </div>)
     }
@@ -161,13 +161,17 @@ class AddRecipe extends Component {
                     <div className="row">
                         {this.state.displayResponse ? <div className="response-message">Successfully added recipe!</div> : null}
                     </div>
+                    {/*<div className="input-field col s6">
+                        <textarea name="title" className="materialize-textarea remove-bottom-padding-and-margin" type="text" placeholder="Title" onChange={this.handleChange}></textarea>
+                    </div>*/}
+
                     <div className="input-field col s6">
-                        <textarea name="title" className="materialize-textarea remove-bottom-padding-and-margin" type="text" label="Recipe Title" placeholder="Title" onChange={this.handleChange}></textarea>
+                        <Input name="title" type="text" placeholder="Title" onChange={this.handleChange} end ></Input>
                     </div>
 
 
-                    <div className="input-field col s2 offset-s2">
-                        <Input name="author" type="text" label="Recipe Author" placeholder="Author" onChange={this.handleChange} end ></Input>
+                    <div className="input-field col s6">
+                        <Input name="author" type="text" placeholder="Author" onChange={this.handleChange} end ></Input>
                     </div>
                 </div>
                 <div className="row container ">
