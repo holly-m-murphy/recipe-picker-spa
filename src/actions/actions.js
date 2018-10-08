@@ -12,6 +12,6 @@ const loadRecipes = () => async (dispatch, getState) => {
     dispatch(saveRecipes(response.data.recipes))
 }
 
-export { loadRecipes }
+export { loadRecipes, saveRecipes }
 
 

@@ -10,7 +10,6 @@ class RemoveRecipe extends Component {
     }
 
     handleChange = (e) => {
-        console.log(`e.target`, e.target)
         var change = {}
         change[e.target.name] = e.target.value
         this.setState(change)
