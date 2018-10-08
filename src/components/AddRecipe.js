@@ -58,8 +58,7 @@ class AddRecipe extends Component {
     }
 
     handleSaveRecipe = async () => {
-        const response = await saveRecipe(this.state)
-        console.log(`setting state???`)
+        const response = saveRecipe(this.state)
         this.setState({
             author: "",
             displayResponse: true,
@@ -67,7 +66,7 @@ class AddRecipe extends Component {
             preparations: "",
             title: ""
         })
-        console.log(`after set state`, this.state)
+
     }
 
     render() {
