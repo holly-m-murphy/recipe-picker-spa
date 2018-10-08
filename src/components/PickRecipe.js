@@ -18,6 +18,7 @@ class PickRecipe extends Component {
     }
 
     render() {
+        console.log(`state: recipe`, this.state.recipe)
         return (
             <div>
                 <div className="row container">
