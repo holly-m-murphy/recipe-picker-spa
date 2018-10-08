@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const saveRecipe = (recipe) => {
+export const saveRecipe = async (recipe) => {
     axios.post('http://localhost:8000/add-recipe',
         recipe).then(function (response) {
             return response

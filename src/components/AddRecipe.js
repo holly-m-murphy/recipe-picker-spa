@@ -23,14 +23,14 @@ class AddRecipe extends Component {
     preparationCard = () => {
         return (<div className="card col s5 offset-s1 ">
             <div className="card-content">
-                <textarea name="preparations" id="preparations" class="materialize-textarea" data-length="25000" onChange={this.handleChange}></textarea>
+                <textarea name="preparations" id="preparations" className="materialize-textarea" data-length="25000" value={this.state.preparations} onChange={this.handleChange}></textarea>
             </div>
         </div>)
     }
     ingredientCard = () => {
         return (<div className="card col s5 ">
             <div className="card-content">
-                <textarea name="ingredients" id="ingredients" className="materialize-textarea" data-length="25000" onChange={this.handleChange}></textarea>
+                <textarea name="ingredients" id="ingredients" className="materialize-textarea" data-length="25000" value={this.state.ingredients} onChange={this.handleChange}></textarea>
             </div>
         </div>)
     }
@@ -58,15 +58,16 @@ class AddRecipe extends Component {
     }
 
     handleSaveRecipe = async () => {
-        const response = saveRecipe(this.state)
-        // this.setState({ displayResponse: true })
+        const response = await saveRecipe(this.state)
+        console.log(`setting state???`)
         this.setState({
             author: "",
             displayResponse: true,
-            title: "",
             ingredients: "",
-            preparations: ""
+            preparations: "",
+            title: ""
         })
+        console.log(`after set state`, this.state)
     }
 
     render() {
@@ -78,12 +79,12 @@ class AddRecipe extends Component {
                     </div>
 
                     <div className="input-field col s6">
-                        <Input name="title" id="title" type="text" placeholder="Title" onChange={this.handleChange} end ></Input>
+                        <Input name="title" id="title" type="text" placeholder="Title" value={this.state.title} onChange={this.handleChange} end ></Input>
                     </div>
 
 
                     <div className="input-field col s6">
-                        <Input name="author" id="author" type="text" placeholder="Author" onChange={this.handleChange} end ></Input>
+                        <Input name="author" id="author" type="text" placeholder="Author" value={this.state.author} onChange={this.handleChange} end ></Input>
                     </div>
                 </div>
                 <div className="row container ">
