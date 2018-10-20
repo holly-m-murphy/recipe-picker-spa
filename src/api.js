@@ -9,9 +9,6 @@ export const saveRecipe = async (recipe) => {
         })
 }
 
-export const pickRecipe = () => {
-    console.log(`calling api to pick recipe`)
-}
 
 export const loadRecipes = async () => {
     try {
@@ -23,5 +20,14 @@ export const loadRecipes = async () => {
     }
 }
 
+export const removeRecipe = async (recipeTitle) => {
+    try{
+        const removeResult = await axios.delete('http://localhost:8000/remove-recipe', {data:{title: recipeTitle}})
+        return removeResult
+    }catch(e){
+        console.log(`Error in api while removing recipe: `, e)
+    }
+}
 
-export default { saveRecipe, loadRecipes }
+
+export default { saveRecipe, loadRecipes, removeRecipe }

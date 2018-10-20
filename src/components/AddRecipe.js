@@ -58,7 +58,7 @@ class AddRecipe extends Component {
     }
 
     handleSaveRecipe = async () => {
-        const response = saveRecipe(this.state)
+        saveRecipe(this.state)
         this.setState({
             author: "",
             displayResponse: true,
@@ -98,7 +98,7 @@ class AddRecipe extends Component {
                 </div>
                 <div className="row container">
 
-                    <a className="waves-effect waves-light btn light-blue darken-4" onClick={this.handleSaveRecipe} >Save Recipe</a>
+                    <a className=" btn light-blue darken-4 blue-text text-lighten-5" onClick={this.handleSaveRecipe} >Save Recipe</a>
                 </div>
             </div >
         )

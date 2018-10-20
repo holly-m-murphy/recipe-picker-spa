@@ -15,7 +15,6 @@ import {
 class App extends Component {
 
   render() {
-    console.log(React.version);
     return (
       <Router>
         <div className="">

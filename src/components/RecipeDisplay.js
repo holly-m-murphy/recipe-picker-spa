@@ -63,7 +63,7 @@ class RecipeDisplay extends Component {
                             <p className="center-align">{this.props.recipe.author}</p>
                         </div>
                         <div className="card-action white-text">
-                            <a href="#" onClick={this.expandRecipe}>Expand recipe...</a>
+                            <a onClick={this.expandRecipe}>Expand recipe...</a>
                             {this.state.expanded === true && (
                                 <div>
                                     <h5 >Ingredients: </h5>

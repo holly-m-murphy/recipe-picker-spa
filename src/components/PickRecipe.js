@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Input } from 'react-materialize'
-import pickRecipe from './../api'
 import DisplayRecipeContainer from './../containers/DisplayRecipeContainer'
 
 
@@ -18,7 +16,6 @@ class PickRecipe extends Component {
     }
 
     render() {
-        console.log(`state: recipe`, this.state.recipe)
         return (
             <div>
                 <div className="row container">

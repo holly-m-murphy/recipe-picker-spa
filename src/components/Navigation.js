@@ -11,7 +11,7 @@ class Navigation extends Component {
         return (
             <nav>
                 <div className="nav-wrapper light-blue darken-4">
-                    <a href="#" className="brand-logo left blue-text text-lighten-5">Recipe Picker</a>
+                    <a className="brand-logo left blue-text text-lighten-5">Recipe Picker</a>
                     <ul className="right hide-on-med-and-down">
                         <li><Link to="/add-recipe" ><i className="material-icons">add_circle</i></Link></li>
                         <li><Link to="/remove-recipe"><i className="material-icons">highlight_off</i></Link></li>

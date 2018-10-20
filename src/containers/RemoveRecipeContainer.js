@@ -1,20 +1,19 @@
 import { connect } from 'react-redux';
 import RemoveRecipe from './../components/RemoveRecipe';
-// import { loadRecipes } from './../actions/actions';
+import { removeRecipe } from './../actions/actions';
 
 const mapStateToProps = (state) => {
-    console.log(`what is state in container: `, state)
     return {
         recipes: state.recipes
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         loadRecipes: (recipes) => {
-//             dispatch(loadRecipes(recipes));
-//         }
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        removeRecipe: (recipeTitle) => {
+            dispatch(removeRecipe(recipeTitle));
+        }
+    }
+}
 
-export default connect(mapStateToProps, null)(RemoveRecipe)
+export default connect(mapStateToProps, mapDispatchToProps)(RemoveRecipe)
