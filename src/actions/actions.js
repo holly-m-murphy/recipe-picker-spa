@@ -18,9 +18,9 @@ const loadRecipes = () => async (dispatch, getState) => {
 }
 
 const removeRecipe = (title) => async (dispatch, getState) => {
-    console.log(`removing recipe in action`)
     const response = await api.removeRecipe(title)
     const loadResponse = await api.loadRecipes()
+    dispatch(saveRecipes(loadResponse.data.body.recipes))
 }
 
 export { loadRecipes, saveRecipes, removeRecipe }

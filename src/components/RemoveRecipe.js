@@ -16,7 +16,7 @@ class RemoveRecipe extends Component {
 
     deleteRecipe = (e) => {
         const ind = e.target.id
-        this.props.removeRecipe(this.props.recipes[ind]["S"].title)
+        this.props.removeRecipe(this.props.recipes[ind].title["S"])
     }
 
     recipeList = () => {
