@@ -14,29 +14,32 @@ class RemoveRecipe extends Component {
         this.setState(change)
     }
 
-    deleteRecipe = (e) =>{
+    deleteRecipe = (e) => {
         const ind = e.target.id
-        console.log(`removing recipe from deleteRecipe: `,this.props.recipes[ind].title )
-        this.props.removeRecipe(this.props.recipes[ind].title)
+        this.props.removeRecipe(this.props.recipes[ind]["S"].title)
     }
 
     recipeList = () => {
-        return this.props.recipes.map((recipe,ind) => {
-            return <li key={ind} className="collection-item"><div>{recipe.title}<a href="#!" className="secondary-content "><i id={ind} className="material-icons blue-text text-darken-4" onClick={this.deleteRecipe}>delete</i></a></div></li>
+        return this.props.recipes.map((recipe, ind) => {
+            return <li key={ind} className="collection-item"><div>{recipe.title["S"]}<a href="#!" className="secondary-content "><i id={ind} className="material-icons blue-text text-darken-4" onClick={this.deleteRecipe}>delete</i></a></div></li>
         })
     }
 
+    nothingToDisplay = () => {
+        return <div>No recipes to display! Please add one!</div>
+    }
+
+
     render() {
         return (
-            <div className="">
+
+            <div >
                 <div className="row container additional-top-margin-button ">
 
-
                     <ul className="collection with-header">
-                        {this.recipeList()}
+                        {this.recipeList().length === 0 ? this.nothingToDisplay() : this.recipeList()}
                     </ul>
                 </div>
-
             </div>
         )
     }
