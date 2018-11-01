@@ -9,7 +9,7 @@ class Footer extends Component {
                 </div>
                 <div className="footer-copyright">
                     <div className="">
-                        Last Updated: Dec 2017
+                        Last Updated: Oct 2018
                     </div>
 
                 </div>

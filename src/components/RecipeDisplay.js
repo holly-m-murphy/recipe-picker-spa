@@ -13,25 +13,12 @@ class RecipeDisplay extends Component {
         })
     }
 
-
-
-    // prepSteps = () => {
-    //     const steps = []
-    //     if (this.props.recipe.preparationList) {
-    //         this.props.recipe.preparationList.map((step, ind) => {
-    //             steps.push(<li key={ind}>{step}</li>)
-    //         })
-    //     }
-
-    //     return steps
-    // }
-
     displayListing = (listToMake) => {
         const returnArr = []
-        if (this.props.recipe[listToMake]) {
+        if (this.props.recipe[listToMake]["S"]) {
             //filter each of the '~'
             // [...this.props.recipe.preparations].forEach()
-            let listElements = this.props.recipe[listToMake],
+            let listElements = this.props.recipe[listToMake]["S"],
                 parseIndex = listElements.indexOf("~"),
                 keyCount = 0
 
@@ -54,13 +41,14 @@ class RecipeDisplay extends Component {
 
 
     render() {
+        console.log(`fdafda: `, this.props.recipe)
         return (
             <div className="row">
                 <div className="col m9 offset-m1">
                     <div className="card light-blue darken-4">
                         <div className="card-content white-text">
-                            <span className="card-title center-align">{this.props.recipe.title}</span>
-                            <p className="center-align">{this.props.recipe.author}</p>
+                            <span className="card-title center-align">{this.props.recipe.title["S"] ? this.props.recipe.title["S"] : null}</span>
+                            <p className="center-align">{this.props.recipe.author["S"] ? this.props.recipe.author["S"] : null}</p>
                         </div>
                         <div className="card-action white-text">
                             <a onClick={this.expandRecipe}>Expand recipe...</a>
