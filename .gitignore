@@ -21,3 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 yarn.lock
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
