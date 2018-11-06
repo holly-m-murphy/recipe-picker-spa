@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const saveRecipe = async (recipe) => {
-    axios.post('http://localhost:8000/add-recipe',
+    axios.post('http://localhost:8081/add-recipe',
         recipe).then(function (response) {
             return response
         }).catch(function (error) {
@@ -12,7 +12,7 @@ export const saveRecipe = async (recipe) => {
 
 export const loadRecipes = async () => {
     try {
-        const fetchResult = await axios.get('http://localhost:8000/fetch-recipes')
+        const fetchResult = await axios.get('http://localhost:8081/fetch-recipes')
         return fetchResult
     } catch (e) {
         // todo: handle error
@@ -21,10 +21,10 @@ export const loadRecipes = async () => {
 }
 
 export const removeRecipe = async (recipeTitle) => {
-    try{
-        const removeResult = await axios.delete('http://localhost:8000/remove-recipe', {data:{title: recipeTitle}})
+    try {
+        const removeResult = await axios.delete('http://localhost:8081/remove-recipe', { data: { title: recipeTitle } })
         return removeResult
-    }catch(e){
+    } catch (e) {
         console.log(`Error in api while removing recipe: `, e)
     }
 }
